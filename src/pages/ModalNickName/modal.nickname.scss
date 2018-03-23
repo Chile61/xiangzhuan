@@ -1,0 +1,26 @@
+.modalbox{
+  .bar-button-ios{
+    font-size: 1.5rem;
+  }
+}
+
+.modalContent{
+  .list-ios {
+    margin: 0;
+    .item-block {
+      margin-bottom: 0;
+      min-height: 3.5rem;
+    }
+
+    .item-ios{
+      font-size: 1.4rem;
+      color: #555;
+    }
+
+    &>.item-block:last-child .item-inner,
+    &>.item-wrapper:last-child .item-block .item-inner{
+      border-bottom: 0 !important;
+    }
+  }
+
+}

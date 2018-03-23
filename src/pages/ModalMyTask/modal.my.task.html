@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true" class="modalbox">
+    <ion-title>提交任务审核</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="closeNotice()" color="whites">
+        关闭
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentH modalContent">
+  <ion-card class="noticetext">
+    <ion-row>
+      <ion-col>
+        <div class="uploads" (click)="upPhoto(1)" *ngIf="_imgurl1==0">
+          <div class="upii">
+            <i class="iconcus-Plus"></i>
+          </div>
+        </div>
+        <img [src]="_imgurl1" *ngIf="_imgurl1!=0" class="imgwh">
+      </ion-col>
+      <ion-col>
+        <div class="uploads" (click)="upPhoto(2)" *ngIf="_imgurl2==0">
+          <div class="upii">
+            <i class="iconcus-Plus"></i>
+          </div>
+        </div>
+        <img [src]="_imgurl2" *ngIf="_imgurl2!=0" class="imgwh">
+      </ion-col>
+      <ion-col>
+        <div class="uploads" (click)="upPhoto(3)" *ngIf="_imgurl3==0">
+          <div class="upii">
+            <i class="iconcus-Plus"></i>
+          </div>
+        </div>
+        <img [src]="_imgurl3" *ngIf="_imgurl3!=0" class="imgwh">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="uploads" (click)="upPhoto(4)" *ngIf="_imgurl4==0">
+          <div class="upii">
+            <i class="iconcus-Plus"></i>
+          </div>
+        </div>
+        <img [src]="_imgurl4" *ngIf="_imgurl4!=0" class="imgwh">
+      </ion-col>
+      <ion-col>
+        <div class="uploads" (click)="upPhoto(5)" *ngIf="_imgurl5==0">
+          <div class="upii">
+            <i class="iconcus-Plus"></i>
+          </div>
+        </div>
+        <img [src]="_imgurl5" *ngIf="_imgurl5!=0" class="imgwh">
+      </ion-col>
+      <ion-col>
+        <div class="uploads" (click)="upPhoto(6)" *ngIf="_imgurl6==0">
+          <div class="upii">
+            <i class="iconcus-Plus"></i>
+          </div>
+        </div>
+        <img [src]="_imgurl6" *ngIf="_imgurl6!=0" class="imgwh">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="webURL" placeholder="http://"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button color="primary" round block (click)="submitMyTask()">提交</button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

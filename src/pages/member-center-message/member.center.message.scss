@@ -1,0 +1,29 @@
+.memberCard ion-card>.msbox .item-block {
+ span{
+   font-size: 1.25rem;
+   color: #883;
+ }
+}
+
+.mess-tab{
+  background-color: #fff;
+  text-align: center;
+  padding: 0;
+  ion-col{
+    padding: 0;
+    &:first-child{
+      border-right: 1px solid #f8f8f8;
+    }
+    >span{
+      display: block;
+      height: 3rem;
+      line-height: 3rem;
+      width: 100px;
+      margin: 0 auto;
+    }
+  }
+
+  .messBB{
+    border-bottom:0.2rem solid #4768f3;
+  }
+}

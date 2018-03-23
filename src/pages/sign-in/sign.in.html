@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backbutton">
+      <button ion-button icon-only (click)="backSignIn()">
+        <i class="iconcus-arrow-left signup-arrow-left"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>登录</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <i class="iconcus-user signin-icon" item-start></i>
+      <ion-input type="text" placeholder="请输入您的用户名" [(ngModel)] = "users.username" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <i class="iconcus-password signin-icon" item-start></i>
+      <ion-input type="password" placeholder="请输入您的密码" [(ngModel)] = "users.password" clearInput></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button color="primary" round block (click)="signIn(users)">登录</button>
+  <ion-grid>
+    <ion-row class="textH">
+      <ion-col (click)="forgotPassword()">忘记密码？</ion-col>
+      <ion-col text-right (click)="signUpTo()">注册</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

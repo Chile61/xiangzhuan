@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backbutton">
+      <button ion-button icon-only (click)="backLeftGo()">
+        <i class="iconcus-arrow-left backleft"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>我的邀请码</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentH memberCode" padding>
+  <ion-card>
+    <div class="juchi"></div>
+    <div class="con-box">
+      <div class="code-title">活动规则</div>
+      <div class="xians"></div>
+      <p class="cons">我是活动规则介绍，我是活动规则介绍，我是活动规则介绍我是活动规则介绍，我是活动规则介绍我是活动规则介绍，我是活动规则介绍我是活动规则介绍我是活动规则介绍，我是活动规则介绍我是活动规则介绍。</p>
+    </div>
+    <div class="gelixian">
+      <span class="leftb"></span>
+      <span class="xuxian"></span>
+      <span class="rightb"></span>
+    </div>
+    <div class="con-box">
+      <div class="mymm"><span><img src="assets/imgs/left-line.png"></span>&nbsp;&nbsp;我的邀请码&nbsp;&nbsp;<span><img src="assets/imgs/right-line.png"></span></div>
+      <div class="yqmm">{{_code}}</div>
+      <div class="chan">
+        <i class="iconcus-Apply"></i>
+        可长按复制邀请码
+      </div>
+      <div class="fxhy">
+        <button ion-button color="primary" round block>
+          <i class="iconcus-share"></i>
+          &nbsp;&nbsp;分享给好友，邀请加入享客
+        </button>
+      </div>
+
+    </div>
+  </ion-card>
+</ion-content>

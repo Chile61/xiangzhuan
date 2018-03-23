@@ -1,0 +1,37 @@
+.memberContact{
+  background-position:left top;
+  background-image: url("../assets/imgs/map.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+
+  ion-card{
+    margin: 0 0 1rem 0;
+    width: 100%;
+    //width: calc(100% - 24px);
+    @include box-shadow(0 12px 20px rgba(0, 0, 0, .08));
+    @include border-radius(4px);
+
+    .item-block {
+      margin-bottom: 0;
+      i{
+        font-size: 2rem;
+      }
+      .mailsize{
+        font-size: 1.4rem;
+      }
+      font-size: 1.5rem;
+      color: #444;
+    }
+    .list-ios {
+      margin: 0;
+      .item-block{
+        min-height: 2.5rem;
+      }
+    }
+
+    .list-ios .item-block .item-inner {
+      border-bottom: 0 !important;
+    }
+
+  }
+}

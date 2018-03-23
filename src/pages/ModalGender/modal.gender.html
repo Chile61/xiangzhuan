@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true" class="modalbox">
+    <ion-buttons start>
+      <button ion-button clear (click)="closeGender()" color="userc">
+        取消
+      </button>
+    </ion-buttons>
+    <ion-title>设置性别</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="saveGender()" color="whites">
+        完成
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentH modalContent">
+  <ion-card>
+    <ion-list radio-group [(ngModel)]="_gender">
+      <ion-item>
+        <ion-label>男</ion-label>
+        <ion-radio value="男"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>女</ion-label>
+        <ion-radio value="女"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

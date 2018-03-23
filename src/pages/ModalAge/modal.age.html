@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true" class="modalbox">
+    <ion-buttons start>
+      <button ion-button clear (click)="closeAge()" color="userc">
+        取消
+      </button>
+    </ion-buttons>
+    <ion-title>设置年龄</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="saveAge()" color="whites">
+        完成
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentH modalContent">
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="_age" clearInput></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

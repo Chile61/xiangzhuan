@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backbutton">
+      <button ion-button icon-only (click)="backLeftGo()">
+        <i class="iconcus-arrow-left backleft"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>帮助</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentH memberCard" padding>
+  <ion-card>
+    <ion-list>
+      <ion-item (click)="helpDetails(i)" *ngFor="let item of helpArray;let i=index;">
+        {{item.title}}
+        <i class="iconcus-arrow-right itemarrow" item-end></i>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

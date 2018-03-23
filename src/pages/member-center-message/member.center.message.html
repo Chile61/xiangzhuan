@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backbutton">
+      <button ion-button icon-only (click)="backLeftGo()">
+        <i class="iconcus-arrow-left backleft"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>消息管理</ion-title>
+  </ion-toolbar>
+  <ion-grid class="mess-tab">
+    <ion-row>
+      <ion-col (click)="showMessages(0)">
+        <span [ngClass]="{'messBB':!messageType}">已读消息</span>
+      </ion-col>
+      <ion-col (click)="showMessages(1)">
+        <span [ngClass]="{'messBB':messageType}">未读消息</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content class="contentH memberCard" padding>
+  <ion-card style="margin-top: 1rem">
+    <ion-list class="msbox" *ngIf="!messageType">
+      <ion-item *ngFor="let readItem of readArray; let i=index;" (click)="NoticeDetails(i,readItem.id)">
+        {{readItem.noticename}}
+        <span item-end>{{readItem.noticeupTime}}</span>
+      </ion-item>
+    </ion-list>
+    <ion-list class="msbox" *ngIf="messageType">
+      <ion-item *ngFor="let unreadItem of UnreadArray; let j=index;" (click)="NoticeDetails(j,unreadItem.id)">
+        {{unreadItem.noticename}}
+        <span item-end>{{unreadItem.noticeupTime}}</span>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,138 @@
+.home-title{
+  min-height: 3.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #fff;
+  line-height: 3.5rem;
+  position: absolute;
+  width: 100%;
+  z-index:10;
+
+  overflow: hidden;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  contain: content;
+  box-sizing: border-box;
+}
+.swiper-pagination-bullet {
+  background: #fff;
+  opacity: .5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #fff;
+  opacity: 1;
+}
+
+.grads{
+  background-color: #fff;
+  padding: 5px 12px!important;
+}
+.mss{
+  color: #808080;
+  font-size: 1.625rem;
+}
+.mssTex{
+  color: #f9992e;
+  overflow: hidden;
+  height: 1.5rem;
+  position: relative;
+  padding: 0;
+  >ul,>ul li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  >ul{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  >ul li{
+    height: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+}
+.text333{
+  font-size: 1.25rem;
+  color: #333;
+  >span{
+    font-size: 2.5rem;
+    margin-left: 0.25rem;
+  }
+}
+.shijian{
+  margin-left: 2.325rem;
+}
+.grad-list{
+  padding: 0;
+  ion-row{
+    margin-bottom: 0.625rem;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 0.3rem;
+  }
+  ion-badge{
+    margin-right: 0.5rem;
+  }
+}
+.list-content{
+  color: #808080;
+  font-size: 1.5rem;
+  margin: .5rem 0;
+  >span{
+    color: #ff0000;
+  }
+}
+.list-title{
+  color: #000;
+  font-size: 1.5rem;
+  @include textOver;
+}
+.list-ionic-jx{
+  vertical-align:middle;
+  >span{
+    font-size: 2.725rem;
+    color: #4768f3;
+    margin: 0.5rem 0;
+    display: block;
+  }
+  color: #4768f3;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.list-ionic-wc{
+  vertical-align:middle;
+  >span{
+    font-size: 2.725rem;
+    color: #828282;
+    margin: 0.5rem 0;
+    display: block;
+  }
+  color: #828282;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.header-t{
+  top: 1.5rem;
+}
+
+.pading-0{
+  padding: 0;
+}
+
+.task-avatar{
+  height: 6rem;
+  overflow: hidden;
+
+  display: flex;
+  display: -webkit-flex;
+/*  align-items: left;
+  justify-content: space-around;
+  flex-direction: column;*/
+}

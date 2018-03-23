@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backbutton">
+      <button ion-button icon-only (click)="backSignIn()">
+        <i class="iconcus-arrow-left signup-arrow-left"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>注册</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="usercreds" (ngSubmit)="signUp(usercreds.value)" #lf="ngForm">
+    <ion-list class="signin-box">
+      <ion-item>
+        <i class="iconcus-user signin-icon" item-start></i>
+        <ion-input type="text" placeholder="请输入您的用户名" formControlName="username" clearInput></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="iconcus-password signin-icon" item-start></i>
+        <ion-input type="password" placeholder="请输入您的密码" formControlName="password" clearInput></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="iconcus-confirm-pw signin-icon" item-start></i>
+        <ion-input type="password" placeholder="请重新输入您的密码" formControlName="confirmPassword" clearInput></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="iconcus-yaoqing signin-icon2" item-start></i>
+        <ion-input type="text" placeholder="请输入您的邀请码" formControlName="invitation" clearInput></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="iconcus-phone signin-icon" item-start></i>
+        <ion-input type="number" placeholder="请输入您的手机号" formControlName="mobile" clearInput></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="iconcus-verification signin-icon" item-start></i>
+        <ion-input type="number" placeholder="请输入短信验证码" formControlName="verification" clearInput></ion-input>
+        <button [disabled]="isShowCodeBtn" type="button" ion-button color="primary" outline round item-end (click)="getVerification(usercreds.value.mobile)">{{codeText}}</button>
+      </ion-item>
+    </ion-list>
+    <button [disabled]="!usercreds.valid" type="submit" ion-button color="primary" round block>注册</button>
+  </form>
+</ion-content>

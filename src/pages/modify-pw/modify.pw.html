@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backbutton">
+      <button ion-button icon-only (click)="backSignIn()">
+        <i class="iconcus-arrow-left signup-arrow-left"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>修改密码</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="modifypw" (ngSubmit)="nextModifyPW(modifypw.value)" #lf="ngForm">
+    <ion-list class="signin-box">
+      <ion-item>
+        <i class="iconcus-password signin-icon" item-start></i>
+        <ion-input type="password" placeholder="请输入您的原密码" formControlName="oldpassword" clearInput></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="iconcus-phone signin-icon" item-start></i>
+        <ion-input type="number" placeholder="请输入您的手机号" formControlName="oldmobile" clearInput></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="iconcus-verification signin-icon" item-start></i>
+        <ion-input type="text" placeholder="请输入短信验证码" formControlName="verification" clearInput></ion-input>
+        <button ion-button color="primary" [disabled]="isShowCodeBtn" (click)="getVerification(modifypw.value.oldmobile)" outline round item-end="">{{codeText}}</button>
+      </ion-item>
+    </ion-list>
+    <button [disabled]="!modifypw.valid" type="submit" ion-button color="primary" round block>下一步</button>
+  </form>
+</ion-content>

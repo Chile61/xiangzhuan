@@ -1,0 +1,41 @@
+<ion-header>
+  <div class="shouyi-head">
+    <ion-grid>
+      <ion-row [ngClass]="{'custom-header-shouyi':isIos}">
+        <ion-col class="custom-title">
+          <div class="backdiv" float-left (click)="backLeftGo()"><i class="iconcus-arrow-left backleft"></i></div>
+          收益记录
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="syxiaozi">
+          <i class="iconcus-Profit"></i>累计总收益（元）
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="sydazi">
+          {{totalProfit}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-header>
+
+<ion-content class="contentH memberCard" padding>
+  <ion-grid class="grad-list">
+    <ion-row *ngFor="let items of myProfitArray">
+      <ion-col col-3>
+        <img [src]="hostURL+items.picurl">
+      </ion-col>
+      <ion-col col-6>
+        <div class="list-title">{{items.taskname}}</div>
+        <div class="list-content-sy">奖励:<span>￥{{items.taskbonuses}}</span></div>
+        <ion-badge color="greenl">{{items.tasktype}}</ion-badge><ion-badge color="greenl">{{items.taskplatform}}</ion-badge>
+      </ion-col>
+      <ion-col col-3 class="list-ionic-jx">
+        <span class="hui-time">{{items.workCompilte}}</span>
+        <span class="sy-numb">收益<i>¥{{items.taskbonuses}}</i></span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

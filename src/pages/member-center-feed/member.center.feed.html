@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backbutton">
+      <button ion-button icon-only (click)="backLeftGo()">
+        <i class="iconcus-arrow-left backleft"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>问题反馈</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentH memberCard" padding>
+  <ion-card>
+    <ion-list class="tixian-feed">
+      <ion-item>
+        <ion-textarea rows="4" [(ngModel)]="feedContent"  placeholder="请输入您的问题，并留下联系方式，我们会尽快给您回复。"></ion-textarea>
+      </ion-item>
+      <ion-item class="shchuan">
+        <div class="uploads" (click)="choosePhoto()" *ngIf="_imgurl==0">
+          <div class="upii">
+            <i class="iconcus-Plus"></i>
+          </div>
+        </div>
+        <img [src]="_imgurl" *ngIf="_imgurl!=0" class="imgwh">
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <button ion-button color="primary" round block (click)="submitFeed()">提交</button>
+</ion-content>

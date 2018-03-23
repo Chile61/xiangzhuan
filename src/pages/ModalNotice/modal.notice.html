@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true" class="modalbox">
+    <ion-title>消息详情</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="closeNotice()" color="whites">
+        关闭
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentH modalContent">
+  <ion-card class="noticetext">
+    <p>{{contents.noticecontent}}</p>
+  </ion-card>
+</ion-content>

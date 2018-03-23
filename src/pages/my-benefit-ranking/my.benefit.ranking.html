@@ -1,0 +1,44 @@
+<ion-header>
+  <div class="mybenefit-head">
+    <ion-grid>
+      <ion-row [ngClass]="{'custom-header-shouyi':isIos}">
+        <ion-col class="custom-title">
+          <div class="backdiv" float-left (click)="backLeftGo()"><i class="iconcus-arrow-left backleft"></i></div>
+          收益排行
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="tubiao"><img src="assets/imgs/benefit-01.png"></div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="paiming">
+          第{{myRank}}名
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="qianshu">您的收益<span>{{myPorf}}</span>元</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <ion-grid class="list-tt">
+    <ion-row>
+      <ion-col col-2>名次</ion-col>
+      <ion-col col-7>昵称</ion-col>
+      <ion-col col-3>收益(元)</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content class="contentH benefitCard" padding>
+  <ion-card>
+    <ion-grid>
+      <ion-row *ngFor="let items of rankArray;let i=index">
+        <ion-col col-2>{{i + 1}}</ion-col>
+        <ion-col col-7>{{items.username}}</ion-col>
+        <ion-col col-3>{{items.userProfit}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

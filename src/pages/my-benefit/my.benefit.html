@@ -1,0 +1,43 @@
+<ion-header>
+  <div [ngClass]="{'meb-img-lan':!currentData.tabType,'meb-img-zi':currentData.tabType}">
+    <ion-grid class="grid-postion">
+      <ion-row [ngClass]="{'custom-header-t':isIos}">
+        <ion-col class="custom-title">我的收益</ion-col>
+      </ion-row>
+      <ion-row class="tabTitle">
+        <ion-col [ngClass]="{'borderB':!currentData.tabType}" col-4 offset-2 text-center ion-text color="whites" (click)="tabsHandler(0)">任务收益</ion-col>
+        <ion-col [ngClass]="{'borderB':currentData.tabType}" col-4 text-center ion-text color="whites" (click)="tabsHandler(1)">下级收益</ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 0.25rem">
+        <ion-col>
+          <p class="nowsy" ion-text color="whites">今日当前收益(元)</p>
+          <span class="nowje" ion-text color="whites">{{currentData.nowData}}</span>
+        </ion-col>
+        <ion-col (click)="rankingGo()" *ngIf="!currentData.tabType"></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="nowsy padding-right-0" ion-text color="whites">
+          进行中任务收益(元)<span>{{currentData.conduct}}</span>
+        </ion-col>
+        <ion-col class="nowsy padding-left-0" ion-text color="whites">
+          账户余额(元)<span>{{currentData.integral}}</span>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 0.75rem">
+        <ion-col>
+          <div class="zhanghu" type="button" ion-button color="whites">
+            <i class="iconcus-coin-yen" [ngClass]="{'rwii':!currentData.tabType,'xjii':currentData.tabType}"></i>
+            {{shouyiname}}
+            <span [ngClass]="{'spansize':!currentData.tabType,'spansizex':currentData.tabType}">{{currentData.totalData}}</span>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-header>
+
+<ion-content class="contentH" padding>
+  <div padding-vertical class="chartTop">
+    <canvas #chartLine height="240"></canvas>
+  </div>
+</ion-content>

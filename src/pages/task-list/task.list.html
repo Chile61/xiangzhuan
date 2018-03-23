@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-title>任务列表</ion-title>
+  </ion-toolbar>
+  <ion-grid class="selectbox">
+    <ion-row>
+      <ion-col style="border-right: 0.55px solid #e1e1e2;" (click)="taskListHandler(0)">
+        <div class="seacchBtn">
+          <span [innerHtml]="typeValue"></span><i class="iconcus-play3"></i>
+        </div>
+      </ion-col>
+      <ion-col (click)="taskListHandler(1)">
+        <div class="seacchBtn">
+          <span [innerHtml]="taskSort[sortValue].name"></span><i class="iconcus-play3"></i>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="seachBox" *ngIf="isShowSelect">
+    <ion-backdrop disable-activated="" role="presentation" tappable="" style="opacity: 0.3;"></ion-backdrop>
+    <ion-grid class="selectBoxs" *ngIf="!selectType">
+      <ion-row>
+        <ion-list radio-group [(ngModel)]="typeValue">
+          <ion-item *ngFor="let item of taskType">
+            <ion-label>
+              {{ item.name }}
+            </ion-label>
+            <ion-radio [value]="item.name" color="danger" (ionSelect)="dogSelect($event)"></ion-radio>
+          </ion-item>
+        </ion-list>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="selectBoxs" *ngIf="selectType">
+      <ion-row>
+        <ion-list radio-group [(ngModel)]="sortValue">
+          <ion-item *ngFor="let item of taskSort">
+            <ion-label>
+              {{ item.name }}
+            </ion-label>
+            <ion-radio [value]="item.id" color="danger" (ionSelect)="dogSelect($event)"></ion-radio>
+          </ion-item>
+        </ion-list>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-header>
+
+<ion-content class="contentH" padding>
+  <ion-grid class="grad-list">
+
+    <ion-row *ngFor="let items of taskList;let i=index;" (click)="showTaskDetails(i)" >
+      <ion-col col-3>
+        <img [src]="hostURL+items.picurl">
+      </ion-col>
+      <ion-col col-7>
+        <div class="list-title">{{items.taskname}}</div>
+        <div class="list-content">奖励:<span>￥{{items.taskbonuses}}</span> </div>
+        <ion-badge color="greenl">{{items.tasktype}}</ion-badge><ion-badge color="greenl">{{items.taskplatform}}</ion-badge>
+      </ion-col>
+      <ion-col col-2 class="list-ionic-jx" *ngIf="items.taskcount>0">
+        <span class="iconcus-hand"></span>
+        进行中
+      </ion-col>
+      <ion-col col-2 class="list-ionic-wc" *ngIf="items.taskcount==0">
+        <span class="iconcus-check-mark"></span>
+        已完成
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

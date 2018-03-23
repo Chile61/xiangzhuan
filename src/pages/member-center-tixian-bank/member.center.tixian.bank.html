@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backbutton">
+      <button ion-button icon-only (click)="backLeftGo()">
+        <i class="iconcus-arrow-left backleft"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>绑定银行卡</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentH memberCard" padding>
+  <form [formGroup]="bankData" (ngSubmit)="insertBank(bankData.value)" #lf="ngForm">
+    <ion-card class="tixian-input">
+        <ion-list>
+          <ion-item (click)="bankHandler()">
+            <div class="yhang">银行卡<span>{{banks}}</span></div>
+            <i class="iconcus-arrow-right itemarrow" item-end></i>
+          </ion-item>
+          <ion-item>
+            <ion-label fixed>卡号</ion-label>
+            <ion-input type="text" placeholder="请输入卡号" formControlName="cardNum" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label fixed>姓名</ion-label>
+            <ion-input type="text" placeholder="请输入姓名" formControlName="cardName" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label fixed>密码</ion-label>
+            <ion-input type="password" placeholder="*******" formControlName="cardPw" clearInput></ion-input>
+          </ion-item>
+        </ion-list>
+    </ion-card>
+    <ion-card class="tixian-input">
+      <ion-list>
+        <ion-item>
+          <ion-label fixed>手机号</ion-label>
+          <ion-input type="text" placeholder="请输入手机号" formControlName="mobile" clearInput></ion-input>
+        </ion-item>
+        <ion-item>
+          <div item-start class="yzm">验证码</div>
+          <ion-input type="text" text-center formControlName="verification" clearInput></ion-input>
+          <button ion-button color="primary" type="button" clear item-end (click)="getVerification(bankData.value.mobile)">{{codeText}}</button>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    <button [disabled]="!bankData.valid" ion-button color="primary" type="submit" round block>提交</button>
+  </form>
+</ion-content>

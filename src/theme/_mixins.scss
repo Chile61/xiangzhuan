@@ -1,0 +1,59 @@
+@mixin textOver(){
+  overflow:hidden;
+  word-break:keep-all;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+@mixin border-top-radius($radius) {
+  border-top-right-radius: $radius;
+  border-top-left-radius: $radius;
+}
+@mixin border-right-radius($radius) {
+  border-bottom-right-radius: $radius;
+  border-top-right-radius: $radius;
+}
+@mixin border-bottom-radius($radius) {
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+@mixin border-left-radius($radius) {
+  border-bottom-left-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+@mixin border-radius($radius, $important:'') {
+  -webkit-border-radius: $radius#{$important};
+  -moz-border-radius: $radius#{$important};
+  -ms-border-radius: $radius#{$important};
+  -o-border-radius: $radius#{$important};
+  border-radius: $radius#{$important};
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+  box-shadow: $shadow;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: alpha(opacity=$opacity-ie);
+}
+
+@mixin gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+  background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
+  background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+}
+
+@mixin xuanzhuan($rotates){
+  transform:rotate($rotates);
+  -ms-transform:rotate($rotates);     /* IE 9 */
+  -moz-transform:rotate($rotates);     /* Firefox */
+  -webkit-transform:rotate($rotates); /* Safari 和 Chrome */
+  -o-transform:rotate($rotates);     /* Opera */
+}

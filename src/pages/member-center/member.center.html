@@ -1,0 +1,114 @@
+<ion-header>
+  <div class="meb-img">
+    <ion-grid class="grid-user">
+      <ion-row [ngClass]="{'custom-header-t':isIos}">
+        <ion-col class="custom-title">会员中心</ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 0.75rem">
+        <ion-col col-3>
+          <div class="avarta" *ngIf="isLoginin"><img [src]="userInfo.avatar"></div>
+          <div class="avarta" *ngIf="!isLoginin"><img src="assets/imgs/moren.jpg"></div>
+        </ion-col>
+        <ion-col col-8 ion-text color="whites" (click)="userGo()" *ngIf="isLoginin">
+          <div class="user-con1">ID：{{userInfo.username}}</div>
+          <div class="user-con2"><i class="iconcus-Profit"></i>当前收益（元） <span>{{userInfo.expval}}</span></div>
+        </ion-col>
+        <ion-col col-8 ion-text color="whites" class="nologin" *ngIf="!isLoginin">
+          <button ion-button clear color="whites" (click)="singInGo()">请登录</button>
+          <button ion-button clear color="whites" (click)="singUpGo()">注册</button>
+        </ion-col>
+        <ion-col col-1 class="rowright" (click)="userGo()">
+          <i ion-text color="whites" class="iconcus-arrow-right"></i>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 0.75rem">
+        <ion-col>
+          <ion-card class="colCard">
+            <ion-grid class="grid-card">
+              <ion-row>
+                <ion-col (click)="codeGo()">
+                  <i class="iconcus-mytask" ion-text color="lvse"></i><br>
+                  <span>我的邀请码</span>
+                </ion-col>
+                <ion-col (click)="mytaskGo()">
+                  <i class="iconcus-invitation" ion-text color="secondary"></i><br>
+                  <span>我的任务</span>
+                </ion-col>
+                <ion-col (click)="sharkerGo()">
+                  <i class="iconcus-subordinate" ion-text color="lanse"></i><br>
+                  <span>下级享客</span>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-header>
+
+<ion-content class="contentH memberCard" padding>
+  <div class="blankContent"></div>
+  <ion-card>
+    <ion-list>
+      <ion-item (click)="shouyiGo()">
+        <i class="iconcus-Profit" ion-text color="lvse"></i>
+        收益记录
+        <i class="iconcus-arrow-right itemarrow" item-end></i>
+      </ion-item>
+      <ion-item (click)="tixianGo()">
+        <i class="iconcus-Withdrawals" ion-text color="lanse"></i>
+        提现管理
+        <i class="iconcus-arrow-right itemarrow" item-end></i>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card>
+    <ion-list>
+      <ion-item (click)="messageGo()">
+        <i class="iconcus-messages" ion-text color="zise"></i>
+        消息管理
+        <i class="iconcus-arrow-right itemarrow" item-end></i>
+      </ion-item>
+      <ion-item (click)="feedGo()">
+        <i class="iconcus-feedback" ion-text color="secondary"></i>
+        问题反馈
+        <i class="iconcus-arrow-right itemarrow" item-end></i>
+      </ion-item>
+      <ion-item (click)="modifypwGo()">
+        <i class="iconcus-modify-pw" ion-text color="lvse"></i>
+        修改密码
+        <i class="iconcus-arrow-right itemarrow" item-end></i>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <i class="iconcus-cache" ion-text color="secondary"></i>
+        清理缓存
+        <i class="iconcus-arrow-right itemarrow" item-end></i>
+      </ion-item>
+      <ion-item (click)="helpGo()">
+        <i class="iconcus-help" ion-text color="secondary"></i>
+        帮助
+        <i class="iconcus-arrow-right itemarrow" item-end></i>
+      </ion-item>
+      <ion-item (click)="contactUsGo()">
+        <i class="iconcus-contact" ion-text color="primary"></i>
+        联系我们
+        <i class="iconcus-arrow-right itemarrow" item-end></i>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card>
+    <ion-list>
+      <ion-item (click)="platformGo()">
+        <i class="iconcus-platform" ion-text color="juhuang"></i>
+        平台管理
+        <i class="iconcus-arrow-right itemarrow" item-end></i>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <button ion-button color="tbred" round block margin-top (click)="logOut()" *ngIf="isLoginin">退出登录</button>
+</ion-content>

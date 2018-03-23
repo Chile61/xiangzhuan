@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backbutton">
+      <button ion-button icon-only (click)="backLeftGo()">
+        <i class="iconcus-arrow-left backleft"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>平台管理</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentH memberCard" padding>
+  <ion-card class="tixian-input-plat">
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>微博名称</ion-label>
+        <ion-input type="text" placeholder="请输入微博名称" [(ngModel)]="wei_bo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>好友数量</ion-label>
+        <ion-input type="text" placeholder="请输入好友数量" [(ngModel)]="weibonum"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>截图说明</ion-label>
+        <ion-input type="text" placeholder="请输入说明文字" [(ngModel)]="webboIntro"></ion-input>
+      </ion-item>
+      <ion-item class="shchuan">
+        <div class="uploads" (click)="choosePhoto()" *ngIf="_imgurl==0">
+          <div class="upii">
+            <i class="iconcus-Plus"></i>
+          </div>
+        </div>
+        <img [src]="_imgurl" *ngIf="_imgurl!=0" class="imgwh">
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <button ion-button color="primary" round block (click)="submitWeibo()">提交</button>
+</ion-content>

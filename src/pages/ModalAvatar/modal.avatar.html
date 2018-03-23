@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true" class="modalbox">
+    <ion-buttons start>
+      <button ion-button clear (click)="closeAvatar()" color="userc">
+        取消
+      </button>
+    </ion-buttons>
+    <ion-title>个人头像</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="selectAvatar()" color="whites">
+        选择
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentBack">
+  <img [src]="_avurl" [ngStyle]="stypesMt">
+</ion-content>

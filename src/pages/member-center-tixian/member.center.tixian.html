@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backbutton">
+      <button ion-button icon-only (click)="backLeftGo()">
+        <i class="iconcus-arrow-left backleft"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>提现管理</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentH memberCard" padding>
+  <ion-card>
+    <ion-list class="txbox">
+      <ion-item (click)="tixianManage()">
+        新增提现账号
+        <i class="iconcus-arrow-right itemarrow" item-end></i>
+      </ion-item>
+    </ion-list>
+    <ion-list radio-group [(ngModel)]="txMode">
+      <ion-item>
+        <i class="iconcus-wechatb tixiani" ion-text color="weixin" item-start></i>
+        <ion-label>微信</ion-label>
+        <ion-radio value="0"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <i class="iconcus-alipay tixiani" ion-text color="zhifu" item-start></i>
+        <ion-label>支付宝</ion-label>
+        <ion-radio value="1"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <i class="iconcus-bank-card tixiani" item-start>
+          <i class="path1"></i><i class="path2"></i><i class="path3"></i>
+        </i>
+        <ion-label>银行卡</ion-label>
+        <ion-radio value="2"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card>
+    <ion-list class="tixian-input">
+      <ion-item>
+        最低提现额
+        <span item-end>¥10</span>
+      </ion-item>
+      <ion-item>
+        我的余额
+        <span item-end>¥{{balance}}</span>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>我要提现</ion-label>
+        <ion-input type="text" placeholder="请输入提现金额" [(ngModel)]="amountmoney"></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <button ion-button color="primary" round block (click)="tixianHandler()">提交</button>
+</ion-content>

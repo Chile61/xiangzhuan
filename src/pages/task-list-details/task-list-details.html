@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backwz">
+      <button ion-button icon-only (click)="backLeftGo()">
+        <i class="iconcus-arrow-left backleft"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>任务详情</ion-title>
+  </ion-toolbar>
+  <ion-grid class="task-details">
+    <ion-row>
+      <ion-col class="leftImg"><img src="{{hostURL+itemTask.picurl}}"></ion-col>
+      <ion-col col-9>
+        <div class="list-title">{{itemTask.taskname}}</div>
+        <div class="list-content2">奖励:<span>￥{{itemTask.taskbonuses}}</span> </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <div class="badgebox">
+          <ion-badge color="greenl">{{itemTask.tasktype}}</ion-badge>
+          <ion-badge color="greenl">{{itemTask.taskplatform}}</ion-badge>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content class="contentH">
+  <div class="wztitle">详情</div>
+  <ion-grid class="detail-wz">
+    <ion-row>
+      <ion-col *ngIf="itemTask.tasktype == 'H5'">
+        <a href="{{itemTask.taskh5}}" target="_blank">H5地址</a>
+      </ion-col>
+      <ion-col *ngIf="itemTask.tasktype == '图片'">
+        <ion-row>
+          <ion-col col-4 *ngFor="let picurl of itemTask.picarr">
+            <img [src]="hostURL+picurl">
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col *ngIf="itemTask.tasktype == '文章'" [innerHtml]="itemTask.taskdetails | ImgUrlPipe">
+      </ion-col>
+      <ion-col *ngIf="itemTask.tasktype == '视频'">
+        <a href="{{itemTask.taskvideo}}" target="_blank">视频地址</a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="fenx">
+    <button ion-button color="szise" round block (click)="shareHandler()">
+      <i class="iconcus-share"></i>
+      领取任务
+    </button>
+  </div>
+</ion-content>

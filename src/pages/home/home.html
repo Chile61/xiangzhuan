@@ -1,0 +1,48 @@
+<ion-header>
+<!--  <div class="home-title" [ngClass]="{'header-t':isIos}">首页</div>-->
+  <ion-slides autoplay="3000" loop="true" pager="true" *ngIf="len>=1">
+    <ion-slide *ngFor="let slide of slides">
+      <img *ngIf="slide.hurl ==null" [src]="hostURL+slide.picurl">
+      <a href="{{slide.hurl}}" *ngIf="slide.hurl!=null" target="_blank"><img [src]="hostURL+slide.picurl"></a>
+    </ion-slide>
+  </ion-slides>
+  <ion-grid class="grads">
+    <ion-row>
+      <ion-col class="text333">享转累计发放奖金(元)<span>{{totals}}</span></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-1 class="pading-0">
+        <i class="iconcus-message mss"></i>
+      </ion-col>
+      <ion-col class="mssTex" col-11>
+        <ul #txBar>
+          <li *ngFor="let itemtx of tixianList; let m=index"><span>{{itemtx.username}}成功提现了￥{{itemtx.amountmoney}}</span><span class="shijian">{{itemtx.tixianTime}}</span></li>
+        </ul>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+<ion-content class="contentH" padding>
+  <ion-grid class="grad-list">
+
+    <ion-row *ngFor="let items of taskList;let i=index;" (click)="showTaskDetails(i)" >
+      <ion-col col-3 class="task-avatar">
+        <img [src]="hostURL+items.picurl">
+      </ion-col>
+      <ion-col col-7>
+        <div class="list-title">{{items.taskname}}</div>
+        <div class="list-content">奖励:<span>￥{{items.taskbonuses}}</span></div>
+        <ion-badge color="greenl">{{items.tasktype}}</ion-badge><ion-badge color="greenl">{{items.taskplatform}}</ion-badge>
+      </ion-col>
+      <ion-col col-2 class="list-ionic-jx" *ngIf="items.taskcount>0">
+        <span class="iconcus-hand"></span>
+        进行中
+      </ion-col>
+      <ion-col col-2 class="list-ionic-wc" *ngIf="items.taskcount==0">
+        <span class="iconcus-check-mark"></span>
+        已完成
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

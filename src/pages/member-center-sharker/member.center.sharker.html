@@ -1,0 +1,46 @@
+<ion-header>
+  <div class="shouyi-head">
+    <ion-grid>
+      <ion-row [ngClass]="{'custom-header-shouyi':isIos}">
+        <ion-col class="custom-title">
+          <div class="backdiv" float-left (click)="backLeftGo()"><i class="iconcus-arrow-left backleft"></i></div>
+          下级享客
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="syxiaozi">
+          <i class="iconcus-Profit"></i>累计总收益（元）
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="sydazi">
+          {{tatals}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="myyqm">
+          我的邀请码：{{invis}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-header>
+
+<ion-content class="contentH memberCard" padding>
+  <ion-card>
+    <ion-grid class="sharker-box">
+      <ion-row>
+        <ion-col col-3>昵称</ion-col>
+        <ion-col col-3>名称</ion-col>
+        <ion-col col-4>手机号</ion-col>
+        <ion-col col-2>收益</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let items of sharkerArray">
+        <ion-col col-3>{{items.cnname}}</ion-col>
+        <ion-col col-3>{{items.username}}</ion-col>
+        <ion-col col-4>{{items.mobile}}</ion-col>
+        <ion-col col-2>¥{{items.profitTotal}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

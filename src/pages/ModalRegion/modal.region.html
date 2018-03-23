@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true" class="modalbox">
+    <ion-buttons start>
+      <button ion-button clear (click)="closeRegion()" color="userc">
+        取消
+      </button>
+    </ion-buttons>
+    <ion-title>选择区域</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="saveRegion()" color="whites">
+        完成
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentH modalContent">
+  <ion-card>
+    <ion-list radio-group [(ngModel)]="_region">
+      <ion-item *ngFor="let item of cascadeRegion">
+        <ion-label>
+          {{ item.dataname }}
+        </ion-label>
+        <ion-radio [value]="item.dataname"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

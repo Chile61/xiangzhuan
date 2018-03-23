@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backbutton">
+      <button ion-button icon-only (click)="backLeftGo()">
+        <i class="iconcus-arrow-left backleft"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>个人信息</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentH memberCard userbox" padding>
+  <div class="blankContent"></div>
+  <ion-card class="touxiang">
+    <ion-grid>
+      <ion-row (click)="avatarHandler()">
+        <ion-col col-1>
+          <i class="iconcus-auavta" ion-text color="userc"></i>
+        </ion-col>
+        <ion-col col-4 style="padding-left: 0.75rem">头像<span ion-text color="tbred">*</span></ion-col>
+        <ion-col col-6>
+          <div class="avarta22"><img [src]="userInfo.avatar"></div>
+        </ion-col>
+        <ion-col col-1>
+          <i class="iconcus-arrow-right itemarrow"></i>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-1>
+          <i class="iconcus-nickname" ion-text color="userc"></i>
+        </ion-col>
+        <ion-col col-4>昵称<span ion-text color="tbred">*</span></ion-col>
+        <ion-col col-6 (click)="nicknameHandler()">{{userInfo.cnname}}</ion-col>
+        <ion-col col-1>
+          <i class="iconcus-arrow-right itemarrow"></i>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1>
+          <i class="iconcus-gender" ion-text color="userc"></i>
+        </ion-col>
+        <ion-col col-4>性别<span ion-text color="tbred">*</span></ion-col>
+        <ion-col col-6 (click)="genderHandler()">{{userInfo.sex}}</ion-col>
+        <ion-col col-1>
+          <i class="iconcus-arrow-right itemarrow"></i>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1>
+          <i class="iconcus-age" ion-text color="userc"></i>
+        </ion-col>
+        <ion-col col-4>年龄</ion-col>
+        <ion-col col-6 (click)="ageHandler()">{{userInfo.ages}}</ion-col>
+        <ion-col col-1>
+          <i class="iconcus-arrow-right itemarrow"></i>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1>
+          <i class="iconcus-addr" ion-text color="userc"></i>
+        </ion-col>
+        <ion-col col-4>地区</ion-col>
+        <ion-col col-6 (click)="regionHandler()">{{userInfo.region}}</ion-col>
+        <ion-col col-1>
+          <i class="iconcus-arrow-right itemarrow"></i>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1>
+          <i class="iconcus-occupation" ion-text color="userc"></i>
+        </ion-col>
+        <ion-col col-4>职业</ion-col>
+        <ion-col col-6 (click)="tradeHandler()">{{userInfo.trade}}</ion-col>
+        <ion-col col-1>
+          <i class="iconcus-arrow-right itemarrow"></i>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-1>
+          <i class="iconcus-hobby" ion-text color="userc"></i>
+        </ion-col>
+        <ion-col col-4>兴趣爱好</ion-col>
+      </ion-row>
+    </ion-grid>
+    <ul class="hobbys">
+      <li col-3 *ngFor="let item of hobby;let i= index" (click)="selectHobby(i)">
+        <div class="bbx" [ngClass]="{'yuan':!item.isSelect,'yselct':item.isSelect}">
+          <i class="iconcus-check-mark" *ngIf="item.isSelect"></i>
+          {{item.dataname}}
+        </div>
+      </li>
+    </ul>
+  </ion-card>
+  <button ion-button color="primary" round block margin-top (click)="userSubmit()">提交</button>
+  <div class="tishi">提示：以上*号项为必填项。</div>
+</ion-content>

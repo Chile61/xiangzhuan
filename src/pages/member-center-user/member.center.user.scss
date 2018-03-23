@@ -1,0 +1,120 @@
+.avarta22{
+  width: 4.4rem;
+  height: 4.4rem;
+  @include border-radius(50%);
+  overflow: hidden;
+  border:0.25rem solid #fff;
+  display: inline-block;
+  >img{
+    max-width: 100%;
+  }
+}
+
+.userbox{
+
+  ion-card.touxiang{
+    ion-grid{
+      ion-row{
+        ion-col:nth-child(1),ion-col:nth-child(2),ion-col:nth-child(4){
+          padding: 1.5rem 0 0 0;
+        }
+        ion-col:nth-child(3){
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .button-ios {
+    height: 2.25em!important;
+  }
+
+  ion-card{
+    ion-grid{
+      padding: 0.5rem 1rem;
+      ion-row{
+        border-bottom: 0.55px solid #f3f4f5;
+        &:last-child{
+          border-bottom:0;
+        }
+       ion-col{
+         padding: 1rem 0;
+         &:nth-child(1){
+           font-size: 1.6rem;
+         }
+         &:nth-child(2){
+           padding-left: 0.75rem;
+         }
+         &:nth-child(3){
+           text-align: right;
+           color: #aaa;
+           font-size: 1.25rem;
+           line-height: 1.25rem;
+         }
+         &:nth-child(4){
+           text-align: right;
+           >i{
+             color: #9c9c9c;
+             font-size: 0.75rem;
+           }
+         }
+       }
+      }
+    }
+  }
+
+  ul.hobbys{
+    list-style: none;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 1rem;
+    -webkit-margin-end: 1rem;
+    -webkit-padding-start: 0;
+
+    margin-bottom: 2rem;
+
+
+    &>li{
+      flex: 0 0 25%;
+      width: 25%;
+      max-width: 25%;
+      list-style: none;
+
+      .bbx{
+        padding: 0.5rem;
+        @include border-radius(25px);
+        text-align: center;
+        font-size: 1.25rem;
+        position: relative;
+        >i{
+          position: absolute;
+          right: -0.15rem;
+          top:-0.15rem;
+          font-size: 1.25rem;
+          color: #ff8e62;
+          z-index: 4;
+        }
+      }
+      .yuan{
+        border: 0.55px solid #eee;
+        color: #a3a3a3;
+      }
+      .yselct{
+        border: 0.55px solid #ff8e62;
+        color: #ff8e62;
+      }
+    }
+  }
+
+  .tishi{
+    font-size: 1/rem;
+    text-align: center;
+    color: #ee2b2b;
+    margin: 1rem 0;
+  }
+}

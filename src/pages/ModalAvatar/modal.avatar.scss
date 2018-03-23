@@ -1,0 +1,22 @@
+.contentBack{
+  background-color: rgba(0,0,0,1);
+
+  img{
+    width: 100%;
+  }
+}
+
+.action-sheet-ios .action-sheet-group:last-child {
+  margin-bottom: 0;
+}
+
+.action-sheet-ios .action-sheet-button {
+  margin: 0;
+  padding: 1rem;
+  min-height: 4rem;
+  border-bottom: 0.55px solid #f3f4f5;
+  font-size: 1.5rem;
+  color: #007aff;
+  background: transparent;
+
+}

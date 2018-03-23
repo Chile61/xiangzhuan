@@ -1,0 +1,100 @@
+.tabTitle{
+  border-bottom: 1px solid transparent;
+  border-bottom-color: rgba(0,0,0,0.12);
+  font-size: 1.5rem;
+  >ion-col{
+    padding: 0;
+    height: 3.25rem;
+    line-height: 2.25rem;
+  }
+
+  .borderB{
+    border-bottom: 0.3rem solid #fff;
+  }
+}
+
+.grid-postion{
+/*  position: absolute;
+  left: 0;
+  right: 0;
+  top: 4.75rem;*/
+  padding: 0;
+
+  ion-col{
+    padding: 5px 1.5rem;
+  }
+}
+
+.nowsy{
+  font-size: 1.25rem;
+  >span{
+    font-size: 1.75rem;
+    margin-left: 1rem;
+  }
+}
+.nowje{
+  font-size: 3rem;
+  >p{
+    padding: 0;
+    margin: 0;
+  }
+}
+.padding-left-0{
+  padding: 5px 1.5rem 5px 0 !important;
+}
+.padding-right-0{
+  padding: 5px 0 5px 1.5rem !important;
+}
+
+.zhanghu{
+  width: 100%;
+  @include border-radius(64px);
+  @include box-shadow(0 6px 38px rgba(0, 0, 0, .09));
+  height: 5rem;
+  line-height: 5rem;
+  background-color: #fff;
+  margin-top: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.rwii{
+  font-size: 2rem;
+  color: #4768f3;
+  margin-right: 0.5rem;
+}
+.xjii{
+  font-size: 2rem;
+  color: #6c56ff;
+  margin-right: 0.5rem;
+}
+
+.spansize{
+  font-size: 1.75rem;
+  margin-left: 0.5rem;
+  color: #4768f3;
+}
+.spansizex{
+  font-size: 1.75rem;
+  margin-left: 0.5rem;
+  color: #6c56ff;
+}
+
+.chartTop{
+  //margin-top: 2rem;
+}
+
+.meb-img-lan{
+  background-color:#f3f4f5;
+  background-position:left top;
+  background-image: url("../assets/imgs/benefit-bg0.jpg");
+  background-size:100% auto;
+  background-repeat: no-repeat;
+}
+
+.meb-img-zi{
+  background-color:#f3f4f5;
+  background-position:left top;
+  background-image: url("../assets/imgs/benefit-bg1.jpg");
+  background-size:100% auto;
+  background-repeat: no-repeat;
+}

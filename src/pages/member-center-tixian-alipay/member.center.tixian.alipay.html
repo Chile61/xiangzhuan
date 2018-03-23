@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backbutton">
+      <button ion-button icon-only (click)="backLeftGo()">
+        <i class="iconcus-arrow-left backleft"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>绑定支付宝</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentH memberCard" padding>
+  <ion-card class="tixian-input">
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>支付宝账号</ion-label>
+        <ion-input type="text" placeholder="请输入支付宝账号" [(ngModel)]="alipay"></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <button ion-button color="primary" round block (click)="alipayHandler()">提交</button>
+</ion-content>

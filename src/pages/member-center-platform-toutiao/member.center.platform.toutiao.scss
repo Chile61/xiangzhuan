@@ -1,0 +1,38 @@
+.tixian-input-toutiao  {
+
+  & ion-label[fixed]{
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100px;
+    -ms-flex: 0 0 100px;
+    flex: 0 0 100px;
+    width: 100px;
+    min-width: 100px;
+    max-width: 200px;
+  }
+
+  .shchuan{
+    border-bottom: 0;
+
+    ion-label{
+      font-size: 1.25rem;
+      color: #999;
+    }
+    .uploads{
+      width: 4rem;
+      height: 4rem;
+      border: 1px solid #f3f4f5;
+      border-radius: 4px;
+      margin-bottom: 5px;
+      .upii{
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 0.75rem auto;
+        i{
+          font-size: 2.75rem;
+          color: #dcdcdc;
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,33 @@
+
+/// @prop - Width of the action sheet
+$action-sheet-width:                             100% !default;
+
+/// @prop - Maximum width of the action sheet
+$action-sheet-max-width:                         500px !default;
+
+
+.ionic-custom-layer {
+  @include position(0, null, null, 0);
+
+  position: absolute;
+  z-index: $z-index-overlay;
+  display: block;
+
+  width: $action-sheet-width;
+  height: $action-sheet-width;
+}
+
+.layer-wrapper {
+  @include position(0, 0, 0, 0);
+  @include margin(auto);
+  //@include transform(translate3d(0, 0%, 0));
+  transform: translateY(0%);
+  position: absolute;
+  z-index: $z-index-overlay-wrapper;
+  display: block;
+
+  width: $action-sheet-width;
+  max-width: $action-sheet-max-width;
+
+  pointer-events: none;
+}

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backbutton">
+      <button ion-button icon-only (click)="backLeftGo()">
+        <i class="iconcus-arrow-left backleft"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>平台管理</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentH memberCard" padding>
+  <ion-card>
+    <ion-grid class="platformbox">
+      <ion-row (click)="webchatFriendGo()">
+        <ion-col col-5>
+          微信好友数量
+        </ion-col>
+        <ion-col col-7>
+          <i class="iconcus-wechat" ion-text color="weixin"></i>
+          请输入微信好友数量
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="weiboFansGo()">
+        <ion-col col-5>
+          微博粉丝数量
+        </ion-col>
+        <ion-col col-7>
+          <i class="iconcus-sina-weibo" ion-text color="tbred"></i>
+          请输入微博粉丝数量
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="toutiaoFansGo()">
+        <ion-col col-5>
+          今日头条粉丝数量
+        </ion-col>
+        <ion-col col-7>
+          <i class="iconcus-headlines tt" ion-text color="tbred"></i>
+          请输入今日头条粉丝数量
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

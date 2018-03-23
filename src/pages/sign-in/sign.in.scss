@@ -1,0 +1,37 @@
+.textH{
+  color: #555;
+  font-size: 1.5rem;
+}
+
+.list-ios > .item-block:first-child,
+.list-ios > .item-block:last-child,
+.list-ios > .item-wrapper:last-child .item-block{
+  border-top: 0!important;
+}
+
+
+.list-ios > .item-block:last-child,
+.list-ios > .item-wrapper:last-child .item-block {
+  border-bottom: 0;
+}
+
+.list-ios .item-block .item-inner {
+  border-bottom: 0.55px solid #f1f1f1!important;
+}
+
+.list-ios > .item-block:last-child .item-inner,
+.list-ios > .item-wrapper:last-child .item-block .item-inner {
+  border-bottom: 0.55px solid #f1f1f1!important;
+}
+
+.item-block{
+  margin-bottom: 2rem;
+}
+.list-ios {
+  margin: 2rem 0 4rem 0;
+}
+
+.signin-icon{
+  font-size: 2rem;
+  color: #007aff;
+}

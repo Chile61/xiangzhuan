@@ -1,0 +1,31 @@
+.platformbox{
+  padding:5px 0.75rem;
+  ion-row{
+    border-bottom: 0.55px solid #f3f4f5;
+    &:last-child{
+      border-bottom:0;
+    }
+
+    ion-col{
+      padding: 0.75rem 1rem;
+      margin: 0.5rem 0;
+      &:first-child{
+        font-size: 1.25rem;
+        color: #555;
+        text-align: right;
+      }
+      &:last-child{
+        background-color: #f3f4f5;
+        font-size: 1.25rem;
+        color: #999;
+        @include border-radius(3px);
+        >i{
+          font-size: 1.75rem;
+          &.tt{
+            font-size: 1.25rem;
+          }
+        }
+      }
+    }
+  }
+}

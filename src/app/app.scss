@@ -1,0 +1,29 @@
+// App Global Sass
+// --------------------------------------------------
+
+//头部背景颜色
+.toolbar-background-ios{
+  background-color: #4768f3!important;
+}
+
+.tabs-ios .tabbar {
+
+  border-top: 0;
+  background: #fff;
+}
+
+.contentH{
+  background-color: #f3f4f5!important;
+}
+
+ion-app.ios [padding] .scroll-content {
+  padding: 1rem;
+}
+
+.backwz{
+  margin-left: 0.75rem
+}
+
+.tabs-ios .tab-button {
+  font-size: 1.25rem;
+}

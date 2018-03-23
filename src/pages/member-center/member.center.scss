@@ -1,0 +1,141 @@
+.grid-user{
+  padding: 0 1rem;
+  ion-col{
+    padding: 0;
+  }
+
+  .rowright{
+    font-size: 1.5rem;
+    padding-top: 2.5rem;
+
+  }
+}
+
+.custom-title{
+  min-height: 3rem;
+  text-align: center;
+  font-size: 1.75rem;
+  color: #fff;
+  line-height: 3rem;
+  width: 100%;
+}
+
+.avarta{
+  width: 5.5rem;
+  height: 5.5rem;
+  @include border-radius(50%);
+  overflow: hidden;
+  border:0.25rem solid #fff;
+  background-color: #f3f4f6;
+  >img{
+    max-width: 100%;
+  }
+}
+
+.user-con1{
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+.user-con2{
+  font-size: 1.25rem;
+  >i{
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  >span{
+    color: #ff8200;
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
+}
+
+
+.colCard{
+  margin: 1rem 0 0;
+  width: 100%;
+  @include box-shadow(0 12px 20px rgba(0, 0, 0, .1));
+  @include border-radius(4px);
+  padding: 0.75rem;
+
+
+  >.grid-card{
+    margin: 1rem 0;
+
+    ion-col{
+      text-align: center;
+      font-size: 1.25rem;
+      color: #333;
+      >i{
+        font-size: 3.25rem;
+        margin-bottom: 0.5rem;
+      }
+      >span{
+        padding-top: 1rem;
+        display: block;
+      }
+    }
+  }
+}
+
+.memberCard{
+ ion-card{
+   margin: 0 0 1rem 0;
+   width: 100%;
+   //width: calc(100% - 24px);
+   @include box-shadow(0 12px 20px rgba(0, 0, 0, .08));
+   @include border-radius(4px);
+
+   .item-block {
+     margin-bottom: 0;
+     i{
+       font-size: 1.7rem;
+     }
+     .itemarrow{
+       font-size: 1rem!important;
+       color: #999;
+     }
+     font-size: 1.5rem;
+     color: #333;
+   }
+   .list-ios {
+     margin: 0;
+     .item-block{
+       min-height: 2.5rem;
+     }
+   }
+   .list-ios .item-block .item-inner {
+     border-bottom: 0.55px solid #f8f8f8 !important;
+   }
+
+ }
+}
+
+
+.meb-img{
+  background-color:#f3f4f5;
+  background-position:left top;
+  background-image: url("../assets/imgs/user-bg.jpg");
+  background-size:100% auto;
+  background-repeat: no-repeat;
+}
+
+.blankContent{
+  height: .5rem;
+}
+
+.custom-header-t{
+  margin-top: 1rem;
+}
+
+.nologin{
+
+  >.button-ios {
+    height: 1.6em;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    color: #fff;
+    margin: 2rem 0 0;
+    padding: 0 0.125em;
+  }
+}

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backbutton">
+      <button ion-button icon-only (click)="backLeftGo()">
+        <i class="iconcus-arrow-left backleft"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>我的任务</ion-title>
+  </ion-toolbar>
+  <ion-grid class="task-tab">
+    <ion-row>
+      <ion-col (click)="showTask(0)">
+        <span [ngClass]="{'taskBB':taskType[0]}">进行中</span>
+      </ion-col>
+      <ion-col (click)="showTask(1)">
+        <span [ngClass]="{'taskBB':taskType[1]}">已完成</span>
+      </ion-col>
+      <ion-col (click)="showTask(2)">
+        <span [ngClass]="{'taskBB':taskType[2]}">未通过</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content class="contentH" padding>
+  <ion-grid class="grad-list">
+    <ion-row *ngFor="let items of taskArray;let i=index;" (click)="showDetails(i)">
+      <ion-col col-3>
+        <img [src]="hostURL+items.picurl">
+      </ion-col>
+      <ion-col col-6>
+        <div class="list-title">{{items.taskname}}</div>
+        <div class="list-content-jxz">奖励:<span>￥{{items.taskbonuses}}</span></div>
+        <ion-badge color="greenl">{{items.tasktype}}</ion-badge><ion-badge color="greenl">{{items.taskplatform}}</ion-badge>
+      </ion-col>
+      <ion-col col-3 class="list-ionic-jxz" *ngIf='items.workState =="0" && items.taskpic=="0"' (click)="submitMyTask(items.id)">
+        <span class="hui-time">
+          <ion-badge color="primary">提交任务</ion-badge>
+        </span>
+      </ion-col>
+      <ion-col col-3 class="list-ionic-jxz" *ngIf='items.taskpic!="0"'>
+        <span class="hui-time">
+          <ion-badge color="primary">审核中...</ion-badge>
+        </span>
+      </ion-col>
+      <ion-col col-3 class="list-ionic-wc" *ngIf='items.workState =="1"'>
+        <span class="hui-time">已完成</span>
+      </ion-col>
+      <ion-col col-3 class="list-ionic-wtg" *ngIf='items.workState =="2"'>
+        <span class="hui-time">未通过</span>
+        <span class="sy-numb"><ion-badge color="tbred">了解原因</ion-badge></span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

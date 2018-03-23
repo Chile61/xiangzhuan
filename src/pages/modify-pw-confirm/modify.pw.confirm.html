@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backbutton">
+      <button ion-button icon-only (click)="backSignIn()">
+        <i class="iconcus-arrow-left signup-arrow-left"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>修改密码</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="modifyconfirm" (ngSubmit)="modifyconfirmHandler(modifyconfirm.value)" #lf="ngForm">
+    <ion-list class="signin-box">
+      <ion-item>
+        <i class="iconcus-password signin-icon" item-start></i>
+        <ion-input type="password" placeholder="请输入您的密码" formControlName="newpassword" clearInput></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="iconcus-confirm-pw signin-icon" item-start></i>
+        <ion-input type="password" placeholder="请重新输入您的密码" formControlName="confirmPassword" clearInput></ion-input>
+      </ion-item>
+    </ion-list>
+    <button [disabled]="!modifyconfirm.valid" type="submit" ion-button color="primary" round block>确认</button>
+  </form>
+</ion-content>

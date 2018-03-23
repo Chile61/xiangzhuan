@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar hideBackButton ="true">
+    <ion-buttons start class="backbutton">
+      <button ion-button icon-only (click)="backLeftGo()">
+        <i class="iconcus-arrow-left backleft"></i>
+      </button>
+    </ion-buttons>
+    <ion-title>帮助详情</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentH memberCard" padding>
+  <ion-card>
+    <div class="help-details-title">
+      <span>{{itemHelp.title}}</span>
+    </div>
+    <div class="help-details-content" [innerHtml]="itemHelp.content | ImgUrlPipe"></div>
+  </ion-card>
+</ion-content>
