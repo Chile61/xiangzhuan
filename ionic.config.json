@@ -1,0 +1,12 @@
+{
+  "name": "享转",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [{
+    "path": "/",
+    "proxyUrl": "http://xiangzhuan.xin"
+  }]
+}
